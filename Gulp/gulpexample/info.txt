@@ -1,0 +1,8 @@
+npm init (creates package.json)
+
+npm install --save-dev gulp (downloads node modules and sets up gulp)
+
+
+gulp taskname (runs taskname)
+
+gulp (runs default gulp task)

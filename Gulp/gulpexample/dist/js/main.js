@@ -1,0 +1,1 @@
+console.log("Hello Alfie..."),console.log("Hi Alf Alvin..."),console.log("Welcome from 2nd js"),alert("Hi Alfie"),console.log("From libC"),alert("I love you Alfie");
