@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Grid Example</title>
+</head>
+<style type="text/css">
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.wrapper {
+		width: 100%;
+		height: 100%;
+		background: #ccc;
+		display: grid;
+		grid-template-columns : 30% 30% 40%;
+		grid-template-rows : 200px 320px 100px 200px;
+	}
+	.wrapper div {		
+		margin:5px;
+	}
+	.wrapper div.item1 {
+		background: blue;
+		grid-column-start:1; /* start from 1st column grid line.. Ref: https://medium.freecodecamp.org/learn-css-grid-in-5-minutes-f582e87b1228*/
+		grid-column-end:4; /* end at 4th column grid line */
+	}
+	.wrapper div.item2 {
+		background: orange;
+		grid-row-start : 2;  /* start at 1st row grid line*/ 
+		grid-row-end : 4; /* end at 4th row grid line*/ 
+	}
+	.wrapper div.item3 {
+		background: indigo;
+	}
+	.wrapper div.item4 {
+		background: purple;
+	}
+	.wrapper div.item5 {
+		background: green;
+		grid-column:2/4;
+	}
+	.wrapper div.item6 {
+		background: magenta;
+		grid-column: 1/4; /* short cut for grid-column-start & grid-column-end */
+		grid-row: 4/5; /* starts at 4th grid horizontal line and ends at 5th row line */
+	}
+</style>
+<body>
+
+	<div class="wrapper">
+		<div class="item1">
+
+		</div>
+		<div class="item2">
+
+		</div>
+		<div class="item3">
+
+		</div>
+		<div class="item4">
+
+		</div>
+		<div class="item5">
+
+		</div>
+		<div class="item6">
+
+		</div>
+	</div>
+
+</body>
+</html>
