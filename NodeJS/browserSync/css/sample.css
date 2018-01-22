@@ -1,0 +1,8 @@
+body {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  body h1 {
+    color: #fff;
+    padding: 10px; }
