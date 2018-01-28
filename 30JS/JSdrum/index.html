@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Drum</title>
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="key" data-key="65">
+			A
+		</div>
+		<div class="key" data-key="76">
+			L
+		</div>
+		<div class="key" data-key="70">
+			F
+		</div>
+		<div class="key" data-key="73">
+			I
+		</div>
+		<div class="key" data-key="69">
+			E
+		</div>
+	</div>
+	<audio src="sounds/bass.wav" data-key="65"></audio>
+	<audio src="sounds/bassd.wav" data-key="76"></audio>
+	<audio src="sounds/bd.wav" data-key="70"></audio>
+	<audio src="sounds/bassdr.wav" data-key="73"></audio>
+	<audio src="sounds/purekick.wav" data-key="69"></audio>
+
+<script type="text/javascript">
+	window.addEventListener('keydown', (e) => {
+		console.log(e.keyCode);		
+		const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+		if (!audio) return;
+		const key =document.querySelector(`.key[data-key="${e.keyCode}"]`);
+		audio.currentTime = 0;
+		key.classList.add('playing');
+		audio.play();
+	})
+
+	const keys = document.querySelectorAll('.key');
+	const removeTransition = function(e) {
+		console.log(e);
+		if (e.propertyName !== 'transform') return;
+		this.classList.remove('playing');
+	}
+	keys.forEach((item) => item.addEventListener('transitionend', removeTransition))
+</script>
+</body>
+</html>

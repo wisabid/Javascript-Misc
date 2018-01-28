@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get Any Key Code</title>
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+	
+	<div class="upressed"></div>
+	<div class="wrapper">
+		<span></span>
+	</div>
+
+<script type="text/javascript">
+	window.addEventListener('keydown', (e) => {
+		const wrapper = document.querySelector('.wrapper span');
+		if (!e.keyCode) return;
+		wrapper.classList.add('pressed');
+		wrapper.innerHTML = e.keyCode;
+		console.log(e)
+		document.querySelector('.upressed').innerHTML = `You Pressed : ${e.key}`;
+	})
+	const wrapperspan = document.querySelector('.wrapper span');
+	const removetransition = function(e) {
+		if (e.propertyName !== 'transform') return;
+		this.classList.remove('pressed');
+
+	}
+	wrapperspan.addEventListener('transitionend', removetransition);
+</script>
+</body>
+</html>

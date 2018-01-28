@@ -1,0 +1,47 @@
+body {
+	background: #000;
+	display: flex;
+	justify-content: center;align-items: center;
+	height: 500px;
+}
+body .wrapper {
+	width:300px;
+	height: 300px;
+	border-radius: 188px;
+	background: #fff;
+	position: relative;
+	border: 20px solid red;
+}
+body .wrapper .hand {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    height: 2px;
+    transform: rotate(-90deg);
+    transform-origin: left;
+}
+body .wrapper .hand.hour {
+	width: 80px;
+	background: orange;
+}
+body .wrapper .hand.min {
+	width: 110px;
+	background: indigo;
+}
+body .wrapper .hand.sec {
+	width: 120px;
+	background: green;
+	transition: all 0.07s;
+	transition-timing-function: cubic-bezier(0, 1.58, 1, 0.51)
+}
+.alfie {
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    /* background: #fff; */
+    font-family: cursive;
+    /* box-shadow: 0 0 10px red; */
+    padding: 10px;
+    font-size: 20px;
+}

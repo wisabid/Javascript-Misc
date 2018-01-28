@@ -1,0 +1,23 @@
+body {
+	background: #000;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 600px;
+}
+.container .key {
+	padding:20px;
+	border:1px solid #ccc;
+	color: #fff;
+	margin:10px;
+	transition: all 0.07s;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+.container .playing {
+	transform: scale(1.1);
+	border-color:#ffc600;
+	box-shadow: 0 0 20px #ffc600;
+}

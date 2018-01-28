@@ -1,0 +1,27 @@
+body {
+	background: #000;
+}
+body .wrapper {
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 150px;
+	color: #fff;
+
+}
+body .wrapper span {
+	transition: all 0.07s;
+	box-shadow: 0 0 10px #ffc600;
+	padding:50px;
+}
+body .upressed {
+	font-size: 40px;
+	font-style: italic;
+	color:#ccc;
+	text-align: center;
+}
+body .wrapper span.pressed {
+	transform: scale(1.1);
+	box-shadow: 0 0 30px #ffc600;
+}
