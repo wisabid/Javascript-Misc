@@ -1,0 +1,50 @@
+:root {/* NOTE THISSSSSSSSSSSSSSSSSSSSSSSS*/
+	--basealfie : orange;/* NOTE THISSSSSSSSSSSSSSSSSSSSSSSS*/
+	--bluralfie : 10px;/* NOTE THISSSSSSSSSSSSSSSSSSSSSSSS*/
+	--spacingalfie : 10px;/* NOTE THISSSSSSSSSSSSSSSSSSSSSSSS*/
+	--scalealfie : 1;
+}
+body {
+	background: #ffc600;
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.wrapper .imgCont {
+	border:1px solid #fff;
+	border-radius: 5px;
+	width:600px;
+	height: 400px;
+	text-align: center;
+	background: var(--basealfie); /* NOTE THISSSSSSSSSSSSSSSSSSSSSSSS*/
+	padding: var(--spacingalfie);/* NOTE THISSSSSSSSSSSSSSSSSSSSSSSS*/
+}
+.wrapper .imgCont img {
+	filter: blur(var(--bluralfie));/* NOTE THISSSSSSSSSSSSSSSSSSSSSSSS*/
+}
+.leftSec {
+	--changeme : grey;
+	padding:20px;
+	float: left;
+	border-radius: 5px;
+	background: var(--changeme);
+
+}
+@keyframes alfanimation {
+	0% {
+		transform: scale(0.5);
+	}
+	50% {
+		transform : scale(0.75);
+	}
+	100% {
+		transform:scale(var(--scalealfie));
+	}
+}
+img {
+	animation: 5s alfanimation infinite ease-in-out;
+	animation-direction: alternate;
+}

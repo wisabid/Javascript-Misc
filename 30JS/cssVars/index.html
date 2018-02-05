@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Variables</title>
+	<link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="leftSec controls">
+			Spacing : <input type="range" name="spacingalfie" min="5" max="50" data-unit="px" data-cool="+poop"> <br/>
+			Blur : <input type="range" name="bluralfie" min="0" max="25" data-unit="px"><br/>
+			Color : <input type="color" name="basealfie"><br/>
+			Scale : <input type="text" name="scalealfie" disabled="disabled">
+			Change Me : <input type="color" name="changeme">
+	</div>
+	<div class="wrapper">
+		<h1>Change Alfie CSS in JS</h1>
+		<div class="imgCont">
+			<picture>
+				<source media="(max-width:480px;)" srcset="mob.jpg" >
+				<source media="(max-width:1024px;)" srcset="ipad.jpg">
+				<source media="(min-width : 1224px)" srcset="desktop.jpg">
+				<img src="default.jpg" alt="Alfie!" style="max-width:600px;max-height: 400px;" />
+			</picture>
+		</div>
+	</div>
+	<script type="text/javascript">
+		const elems = document.querySelectorAll('.controls input');
+		console.log(elems);
+		function handleUpdate() {
+			console.log('Value : ',this.value);
+			console.log('Name ',this.name);
+			console.log('Dataset',this.dataset);
+			const suffix = this.dataset.unit || '';
+			//css variables and name attributes are similar
+					document.documentElement.style.setProperty(`--${this.name}`, this.value+suffix);
+
+		}
+
+		function handleChangename() {
+			document.querySelector('.leftSec').style.setProperty(`--${this.name}`, this.value);
+		}
+
+
+		elems.forEach((item) => {
+			if (item.name === 'changeme') {
+				item.addEventListener('change', handleChangename)
+			}
+			else {
+					item.addEventListener('change', handleUpdate);
+					item.addEventListener('mousemove', handleUpdate);
+			}
+		})
+	</script>
+</body>
+</html>
